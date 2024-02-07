@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Version>0.0.1</Version>
+
+    <TargetFramework>netstandard1.0</TargetFramework>
+
+    <!-- do not include any files into the project by default -->
+    <EnableDefaultItems>false</EnableDefaultItems>
+
+    <!-- skip all things that would make this a usable C# project/library -->
+    <NoBuild>true</NoBuild>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+
+    <!-- don't warn about no code / build output and no RuntimeMetadataVersion -->
+    <NoWarn>$(NoWarn);CS2008;CS8021;NU5128</NoWarn>
+  </PropertyGroup>
+
+  <!-- See https://learn.microsoft.com/en-us/nuget/concepts/msbuild-props-and-targets -->
+  <ItemGroup>
+    <None Include="build\**" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="\build" />
+    <None Include="buildMultiTargeting\**" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="\buildMultiTargeting" />
+    <None Include="buildTransitive\**" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="\buildTransitive" />
+    <None Include="Sdk\**" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="\Sdk" />
+  </ItemGroup>
+</Project>

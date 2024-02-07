@@ -1,0 +1,6 @@
+<Project>
+    
+  <Target Name="Greet">
+    <Message Text="$(Greeting)" Importance="high" />
+  </Target>
+</Project>

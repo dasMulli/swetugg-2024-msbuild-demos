@@ -1,0 +1,34 @@
+<Project>
+  <PropertyGroup>
+    <Version>1.2.3</Version>
+    <Authors>Martin Ullrich</Authors>
+    <Company>$(Authors)</Company>
+    <LangVersion>Latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <NoWarn>1591</NoWarn>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <RestorePackagesWithLockFile>True</RestorePackagesWithLockFile>
+    <EnablePreviewFeatures>True</EnablePreviewFeatures>
+
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsPath>$(MSBuildThisFileDirectory)artifacts</ArtifactsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <MSBuildTreatWarningsAsErrors>True</MSBuildTreatWarningsAsErrors>
+    <MSBuildWarningsAsMessages>NETSDK1201</MSBuildWarningsAsMessages>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)stylecop.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Add reference to StyleCop analyzers to all projects  -->
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.321">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <!-- All NuGet properties: https://docs.microsoft.com/en-us/dotnet/core/tools/csproj#nuget-metadata-properties -->
+  <!-- All properties by .NET SDKs: https://docs.microsoft.com/en-us/dotnet/core/project-sdk/overview -->
+</Project>

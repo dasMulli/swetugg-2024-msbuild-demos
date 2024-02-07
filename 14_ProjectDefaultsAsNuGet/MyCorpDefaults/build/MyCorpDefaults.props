@@ -1,0 +1,12 @@
+<Project>
+    <PropertyGroup>
+      <NoWarn>1591</NoWarn>
+      <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+      <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+      <MSBuildTreatWarningsAsErrors>True</MSBuildTreatWarningsAsErrors>
+      <MSBuildWarningsAsMessages>NETSDK1201</MSBuildWarningsAsMessages>
+    </PropertyGroup>
+</Project>
+  

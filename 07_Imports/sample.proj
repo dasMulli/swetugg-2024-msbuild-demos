@@ -1,0 +1,8 @@
+<Project>
+
+  <PropertyGroup>
+    <Greeting>Hello MSBuild!</Greeting>
+  </PropertyGroup>
+
+  <Import Project="sample.targets" />
+</Project>
