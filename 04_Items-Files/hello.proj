@@ -14,6 +14,10 @@
     <Message Text="Used Greetings from: %0A@(GreetFile->'* %(FullPath) - %(ModifiedTime)', '%0A')" Importance="high" />
 
     <!--
+    
+    Common MSBuild project items
+    https://learn.microsoft.com/en-us/visualstudio/msbuild/common-msbuild-project-items
+
     "Well-known metadata"
     https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-well-known-item-metadata
     -->
